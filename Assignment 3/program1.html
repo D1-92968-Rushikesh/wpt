@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #image_block {
+            top: 50px;
+            left: 575px;
+
+
+            position: absolute;
+
+        }
+
+        #Parent {
+
+            float: left;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+
+        }
+
+        #Vedio {
+            height: 300px;
+            width: 300px;
+            left: 50px;
+
+            top: 200px;
+            position: absolute;
+
+
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <div id="Vedio">
+            <iframe width="500px" height="300px" src="https://www.youtube.com/embed/x2VI6gaOfKM"
+                frameborder="0"></iframe>
+        </div>
+        <div id="image_block">
+            <img src="images/new_logo.png" alt="">
+            <br></br>
+            <h2>Sunbeam Registration Form</h2>
+            <div id="Parent">
+
+
+                <div id="table">
+                    <form action="">
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <label for="">Name:</label>
+
+                                    </td>
+                                    <td>
+
+                                        <input type="name" placeholder="Enter Your Name">
+                                    </td>
+
+                                </tr>
+                                <tr>
+
+                                    <td>
+                                        <label for="">BirthDate:</label>
+
+                                    </td>
+                                    <td><input type="date" placeholder="mm/dd/yyyy"></td>
+                                </tr>
+                                <tr>
+
+                                    <td>
+                                        <label for="">Password:</label>
+
+                                    </td>
+                                    <td><input type="password" placeholder="Enter Password"></td>
+                                </tr>
+                                <tr>
+
+                                    <td>
+                                        <label for="">Address:</label>
+
+                                    </td>
+                                    <td><textarea type="address" placeholder="Enter your address"></textarea></td>
+                                </tr>
+
+                                <tr>
+
+                                    <td>
+                                        <label for="">Gender:</label>
+
+                                    </td>
+                                    <td>
+                                        <input type="radio" value="Gender">Male
+                                        <input type="radio" value="Gender">Female
+                                    </td>
+                                </tr>
+                                <tr>
+
+                                    <td>
+                                        <label for="">Upload Photo:</label>
+
+                                    </td>
+                                    <td><input type="file" placeholder="Enter your address" accept="image/*"></td>
+                                </tr>
+
+                                <tr>
+
+                                    <td>
+                                        <label for="">Selected Course:</label>
+
+                                    </td>
+                                    <td><select id="" name="Select Course">
+                                            <option value="">Select Course</option>
+                                            <option value="Java">Java</option>
+                                            <option value="CPP">CPP</option>
+                                            <option value="SQL">SQL</option>
+                                            <option value="Flutter">Flutter</option>
+                                            <option value="Python">Python</option>
+
+                                        </select></td>
+                                </tr>
+                                <tr>
+
+                                    <td>
+                                        <label for="">Skill Set:</label>
+
+                                    </td>
+                                    <td><input type="checkbox">Java
+                                        <input type="checkbox">CPP
+                                        <input type="checkbox">OS
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>
+                                        <input type="submit" value="Register">
+                                        <input type="submit" value="Clear">
+                                    </td>
+                                </tr>
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+</body>
+
+</html>
