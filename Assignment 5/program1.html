@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Case1</title>
+</head>
+
+<body>
+    <script>
+        function isNotValid(num) {
+
+
+            if (parseInt(num) < 0 || num == "") {
+                window.alert("Invalid Number")
+                return true;
+
+            }
+            return false;
+        }
+
+
+
+        let number1 = window.prompt("Enter First Number");
+        while (isNotValid(number1)) {
+            number1 = window.prompt("Enter First Number");
+            if (!isNotValid(number1)) {
+                break;
+            }
+        }
+        number1 = parseInt(number1)
+
+        console.log(number1);
+
+
+
+        let number2 = window.prompt("Enter Second Number")
+        while (isNotValid(number2)) {
+            number2 = window.prompt("Enter Second Number");
+        }
+        number2 = parseInt(number2)
+        console.log(number2);
+
+
+
+        let number3 = window.prompt("Enter third Number")
+        while (isNotValid(number3)) {
+            number3 = window.prompt("Enter Third Number");
+        }
+        number3 = parseInt(number3)
+        console.log(number3);
+
+
+
+        function checkLargestNum(num1, num2, num3) {
+            console.log(num1);
+            console.log(num2);
+            console.log(num3);
+            if (num1 > num2 && num1 > num3) {
+
+                return num1;
+            } else if (num2 > num1 && num2 > num3) {
+
+                return num2;
+            } else {
+
+                return num3;
+            }
+
+
+        }
+
+        let result = checkLargestNum(number1, number2, number3);
+        window.alert("Largest Number is :" + result);
+        console.log(result);
+
+    </script>
+</body>
+
+</html>
