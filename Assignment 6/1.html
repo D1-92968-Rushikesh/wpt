@@ -1,0 +1,82 @@
+<!-- Vaibhav Ghage D1 92690 -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment 6 Q1</title>
+    <style>
+        h1 {
+            margin-left: 10px;
+        }
+
+        h2 {
+            -webkit-text-fill-color: red;
+            margin: 0%;
+            margin-left: 10px;
+        }
+
+        #jkl {
+            -webkit-text-fill-color: blue;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Date & Greeting Web Page</h1>
+
+    <h2 id="h21"></h2>
+    <h2 id="h22"></h2>
+    <h2 id="h23"></h2>
+
+    <script>
+        const date = new Date()
+        console.log(date)
+
+        Day = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
+        const day = Day[date.getDay()]
+        console.log(day) //day
+
+
+        Month = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
+        const month = Month[date.getMonth()]
+        console.log(month) //month
+
+        const newDate = date.getDate()
+        console.log(newDate)
+
+        const year = date.getFullYear()
+        console.log(year)//year
+
+        document.getElementById('h21').innerText = `Today is ${day}, ${newDate} ${month} ${year},`
+
+        let greeting = ''
+        const hours = date.getHours()
+        console.log(hours)//hour
+        if (hours < 12) {
+            greeting = 'Good Moring'
+        } else if (hours < 16) {
+            greeting = 'Good Afternoon'
+        } else {
+            greeting = 'Good Evening'
+        }
+        console.log(greeting)// AM/ or PM
+
+        document.getElementById('h22').innerText = `Welcome, and ${greeting} to You.`
+
+
+        const currDate = new Date(year, 12, 31)
+        console.log(currDate)
+
+        const diff = currDate - date
+        console.log(diff)
+        const dayLeft = Math.ceil(diff / (1000 * 60 * 60 * 24))
+        console.log(dayLeft)//DayLeft
+
+        document.getElementById('h33').innerHTML = `Number of days left till end of year: <span id ="jkl">${dayLeft}</span>`
+    </script>
+</body>
+
+</html>

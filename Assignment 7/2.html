@@ -1,0 +1,51 @@
+ <!--Vaibhav Ghage D1 92690 -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment 7 Q2</title>
+</head>
+<body>
+    <h2>Enter Employee Names</h2>
+    <div>
+        <input id="abc" type = 'text' placeholder="Enter employee name">
+        <button onclick="addName()">Add Name</button>
+        <button onclick="sortNdisplay()">Sort & Display</button>
+    </div>
+    <h3>Sorted Employee Names:</h3>
+    <ul id = 'def'></ul>
+
+    <script>
+        empArr=[]
+        function addName(){
+            let a = document.getElementById('abc').value
+            console.log(a)
+            if(a==''){
+                window.alert("Enter Details")
+            }else if(empArr.includes(a)){
+                window.alert("Employee Exists")
+                return
+            }else if(empArr.length>=6){
+                window.alert('You have already entered 6 names!!')
+                return
+            }else{
+                empArr.push(a)
+            }
+            document.getElementById('abc').value=''
+            console.log(empArr)
+        }
+        function sortNdisplay(){
+            const ul = document.getElementById('def')
+            ul.innerHTML=''
+            empArr = empArr.sort()
+            for(l of empArr){
+                const li = document.createElement('li');
+                li.textContent=l;
+                ul.appendChild(li);
+            }
+        }
+    </script>
+</body>
+</html>

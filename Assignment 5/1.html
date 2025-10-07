@@ -1,0 +1,42 @@
+<!-- Vaibhav Ghage D1 92690 -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        f1()
+        function f1() {
+            let num1 = prompt("Enter first Number")
+            while (num1 < 0 || isNaN(num1)) {
+                alert("Please enter valid positive numbers!")
+                num1 = prompt("Enter first Number")
+
+            }
+            let num2 = prompt("Enter second Number")
+            while (num2 < 0 || isNaN(num2)) {
+                alert("Please enter valid positive numbers!")
+                num2 = prompt("Enter first Number")
+
+            }
+            let num3 = prompt("Enter third Number")
+            while (num3 < 0 || isNaN(num3)) {
+                alert("Please enter valid positive numbers!")
+                num3 = prompt("Enter first Number")
+
+            }
+            const res = Math.max(num1, num2, num3)
+            window.alert("The largest number is : " + res)
+            f1()
+        }
+
+    </script>
+</body>
+
+</html>

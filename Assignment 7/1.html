@@ -1,0 +1,222 @@
+<!--Vaibhav Ghage D1 92690-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment-7 Q1</title>
+    <style>
+        h2 {
+            padding-left: 200px;
+        }
+
+        #img1 {
+            padding-left: 200px;
+        }
+
+        .error {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <img id="img1" src="new_logo.png" alt="sunbeam img">
+    <h2>Sunbeam Registration Form</h2>
+    <table>
+        <tbody>
+            <tr>
+                <td>
+                    <iframe width="400" height="230" src="https://www.youtube.com/embed/Az5Bt3zUtiM?si=fRDLdVudDCjiyWHm"
+                        title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </td>
+                <td>
+                    <form onsubmit="return validate(event)">
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <label for="">Name:</label>
+
+                                    </td>
+                                    <td>
+                                        <input id="name" type="text">
+                                        <span id="nameError" class="error"></span><br><br>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label for="">Birthdate:</label>
+                                    </td>
+                                    <td>
+                                        <input id="my_date" type="date">
+                                        <span id="dateError" class="error"></span><br><br>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label for="">Email:</label>
+                                    </td>
+                                    <td>
+                                        <input id="my_email" type="email">
+                                        <span id="emailError" class="error"></span><br><br>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label for="">Password:</label>
+                                    </td>
+                                    <td>
+                                        <input id="password" type="password">
+                                        <span id="passError" class="error"></span><br><br>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label for="">Address:</label>
+                                    </td>
+                                    <td>
+                                        <textarea name="" id="address" cols="13" rows="4"></textarea>
+                                        <span id="addError" class="error"></span><br><br>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label for="">Gender:</label>
+                                    </td>
+                                    <td>
+                                        <input id="radio1" type="radio" name="gender">Male
+                                        <input id="radio2" type="radio" name="gender">Female
+                                        <span id="gender" class="error"></span><br><br>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label for="">Upload Photo:</label>
+                                    </td>
+                                    <td>
+                                        <input id="file" type="file">
+                                        <span id="fileError" class="error"></span><br><br>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label for="">Select your Course:</label>
+                                    </td>
+                                    <td>
+                                        <select id="course" name="course">
+                                            <option value="">Select course</option>
+                                            <option value="">DAC</option>
+                                            <option value="">DMC</option>
+                                            <span id="courseError" class="error"></span><br><br>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label for="">Skill Set:</label>
+                                    </td>
+                                    <td>
+                                        <input type="checkbox" name="checkbox" value="Java">Java
+                                        <input type="checkbox" name="checkbox" value="CPP">CPP
+                                        <input type="checkbox" name="checkbox" value="OS">OS
+                                        <span id="skillError" class="error"></span><br><br>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>
+                                        <button type="submit">Register</button>
+                                        <button type="reset">Clear</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </form>
+
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <script>
+        function validate(event) {
+            let isValid = true;
+            document.querySelectorAll(".error").forEach(e => e.innerHTML = "");
+            const name = document.getElementById('name').value.trim()
+            const my_date = document.getElementById('my_date').value
+            const my_email = document.getElementById('my_email').value
+            const password = document.getElementById('password').value
+            const address = document.getElementById('address').value
+            const gender = document.querySelector('input[name="gender"]:checked')
+            const file = document.getElementById('file').value
+            const course = document.getElementById('course').value
+            const skill = document.querySelectorAll('input[name="checkbox"]:checked')
+
+            let nameReg = /^[A-Za-z]{1,10}$/;
+            if (!nameReg.test(name)) {
+                document.getElementById('nameError').innerHTML = "Only alphabets allowed (max 10 chars)"
+                isValid = false
+            }
+            let birthdate = new Date(my_date)
+            let today = new Date()
+            let age = today.getFullYear() - birthdate.getFullYear()
+            if (birthdate >= today || age < 18) {
+                document.getElementById('dateError').innerHTML = "You must be at least 18 years old"
+                isValid = false
+            }
+            if (my_email == '') {
+                document.getElementById('emailError').innerHTML = "Email is required"
+                isValid = false
+
+            }
+            let passReg = /^(?=.*[0-9])(?=.*[#]).{9,}$/
+            if (!passReg.test(password) || password == '') {
+                document.getElementById('passError').innerHTML = "Password must be at least 9 characters, contain # and one digit"
+                isValid = false
+
+            }
+            if (address == '') {
+                document.getElementById('addError').innerHTML = "Address is required"
+                isValid = false
+
+            }
+            if (!gender) {
+                document.getElementById('gender').innerHTML = "Gender is required"
+                isValid = false
+            }
+            if (file == '') {
+                document.getElementById('fileError').innerHTML = "Photo is required"
+                isValid = false
+
+            }
+            if (course == "Select course") {
+                document.getElementById('courseError').innerHTML = "Please select a course"
+                isValid = false
+            }
+            if (skill.length == 0) {
+                document.getElementById('skillError').innerHTML = "Select at least one skill"
+                isValid = false
+            }
+            if (isValid) {
+                sessionStorage.setItem("name", name);
+                sessionStorage.setItem("dob", my_date);
+                sessionStorage.setItem("email", my_email);
+                sessionStorage.setItem("address", address);
+                sessionStorage.setItem("gender", gender.value);
+                sessionStorage.setItem("course", course);
+                let skillValues = [];
+                skill.forEach(s => skillValues.push(s.value));
+                sessionStorage.setItem("skills", skillValues.join(", "));
+                alert("Form Submitted Successfully!");
+            }
+            return isValid;
+        }
+    </script>
+</body>
+
+</html>

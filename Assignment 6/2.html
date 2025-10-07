@@ -1,0 +1,91 @@
+<!-- Vaibhav Ghage D1 92690 -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment 6 Q2</title>
+    <style>
+        h2 {
+            text-decoration: underline;
+        }
+
+        .calc {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        td {
+            padding: 5px;
+        }
+
+        td>button:hover {
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="calc">
+        <div>
+
+            <h2>Calculator</h2>
+        </div>
+        <div style="border: 2px solid black;">
+            <table>
+                <tbody>
+                    <tr>
+                        <td colspan="2.5">Enter Number 1</td>
+                        <td colspan="2.5"><input id="abc" type="number" required></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2.5">Enter Number 2</td>
+                        <td colspan="2.5"><input type="number" required id="def"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2.5">Result</td>
+                        <td colspan="2.5"><input type="number" id="ghi" readonly></td>
+                    </tr>
+                    <tr>
+                        <td colspan="1"><button type="button" onclick="operation('+')">Addition</button></td>
+                        <td colspan="1"><button type="button" onclick="operation('-')">Subtraction</button></td>
+                        <td colspan="1"><button type="button" onclick="operation('*')">Multiplication</button></td>
+                        <td colspan="1"><button type="button" onclick="operation('/')">Division</button></td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+
+    <script>
+        function operation(op) {
+            const a = parseInt(document.getElementById("abc").value)
+            const b = parseInt(document.getElementById("def").value)
+            let c = ''
+
+            if (isNaN(a) || isNaN(b)) {
+                alert("Enter a Number!!")
+                return;
+            } else {
+                switch (op) {
+                    case '+': c = a + b; break;
+                    case '-': c = a - b; break;
+                    case '*': c = a * b; break;
+                    case '/': c = a / b; break;
+                }
+            }
+            document.getElementById('ghi').value = c
+            console.log(a)
+            console.dir(b)
+        }
+    </script>
+
+</body>
+
+</html>

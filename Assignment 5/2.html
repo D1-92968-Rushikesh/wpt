@@ -1,0 +1,28 @@
+<!-- Vaibhav Ghage D1 92690 -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let num1 = prompt("Enter number of times to print the message: ")
+        while (num1 < 0 || isNaN(num1)) {
+            alert("Please enter valid positive numbers!")
+            num1 = prompt("Enter number of times to print the message: ")
+        }
+        let text = prompt("Enter the message : ")
+        console.log("Repeated Message:")
+        for (let i = 1; i <= num1; i++) {
+            console.log(i + ". " + text)
+        }
+    </script>
+</body>
+
+</html>

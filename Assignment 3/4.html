@@ -1,0 +1,88 @@
+<!-- Vaibhav Ghage D1 92690 -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment 3 Q4</title>
+    <style>
+        #abc{
+            background-color:lightgrey;
+        }
+        h2{
+            text-align: center;
+        }
+        #parent{
+            display:flex;
+            margin-left: 20px;
+            margin-right: 20px;
+            margin-bottom: 50px;
+        }
+        .divi{
+            flex:1;
+            text-align: center;
+            background-color: white;
+            margin:30px;
+            min-width: 200px;
+            max-width: 50%;
+            height:auto;
+            padding: 20px;
+            flex-direction:column;
+            justify-content: space-between;
+        }
+        .imgi{
+            width: 100%;
+            height: 50%;
+            object-fit: cover;
+            
+        }
+        .r{
+            -webkit-text-fill-color: white;
+            text-align: center;
+            background-color: green;
+            margin: 4px ;
+            cursor:pointer;
+        }
+        .para{
+            color:orangered;
+        }
+    </style>
+</head>
+<body id ="abc">
+    <h2>Our Products</h2>
+    <form>
+    <div id ="parent">
+        <div class ="divi">
+            <img src="../Assignment 3/images/laptop.jpeg" class="imgi"><hr>
+            <h3>Product 1</h3>
+            <p>
+                High-quality product that meets<br> your needs.
+            </p>
+            <p class="para"><b>$805.08</b></p>
+            <input type="submit" value="Add to Cart" class="r">
+        </div>
+        <div class ="divi">
+            <img src="../Assignment 3/images/sleeve.jpeg" class="imgi"><hr>
+            <h3>Product 2</h3>
+            <p>
+                Excellent craftmanship and <br>durable design.
+            </p>
+            <p class="para"><b>$11.50</b></p>
+            <input type="submit" value="Add to Cart" class="r" >
+        </div>
+        <div class ="divi">
+            <img src="../Assignment 3/images/Keyboard_mouse.jpeg" class="imgi"><hr>
+            <h3>Product 3</h3>
+            <p>
+                Reliable and affordable choice for <br>everyone.
+            </p>
+            <p class="para"><b>$12.00</b></p>
+            <input type="submit" value="Add to Cart" class="r">
+        </div>
+    </div>
+    </form>
+    <hr style="margin-bottom: 50px;">
+</body>
+</html>
